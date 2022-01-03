@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace genericcollections
+{
+    class Program
+    {
+        class Student
+        {
+            public string Name;
+            public int Rollno;
+            public int Age;
+            public string Place;
+        }
+        static void Main(string[] args)
+        {
+
+            Student studentobj1 = new Student();
+            studentobj1.Name = "IRIC";
+            studentobj1.Rollno = 4;
+            studentobj1.Age = 12;
+            studentobj1.Place = "Idukki";
+            Student studentobj2 = new Student();
+            studentobj2.Name = "IRIN";
+            studentobj2.Rollno = 8;
+            studentobj2.Age = 14;
+            studentobj2.Place = "Wayanad";
+            List<Student> studentobjlist = new List<Student>();
+            studentobjlist.Add(studentobj1);
+            studentobjlist.Add(studentobj2);
+
+            foreach (Student stu in studentobjlist)
+            {
+                Console.WriteLine(stu.Name);
+                Console.WriteLine(stu.Rollno);
+                Console.WriteLine(stu.Age);
+                Console.WriteLine(stu.Place);
+                Console.WriteLine();
+            }
+            Console.Read();
+
+        }
+    }
+}  
+        
+    
+
