@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace del
+{
+public delegate void DelEvent();
+
+class Program
+{
+    public static event DelEvent add;
+
+    static void Main(string[] args)
+    {
+        add += new DelEvent(english);
+        add += new DelEvent(physics);
+        add += new DelEvent(chemistry);
+        add.Invoke();
+
+        Console.ReadLine();
+    }
+    static void english()
+    {
+        Console.WriteLine("english");
+    }
+
+    static void physics()
+    {
+        Console.WriteLine("physics");
+    }
+
+    static void chemistry()
+    {
+        Console.WriteLine("chemistry");
+    }
+}  
+}  
