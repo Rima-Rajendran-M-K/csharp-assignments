@@ -1,0 +1,38 @@
+using System;
+using static System.Console;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Nongenericcollections
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Stack s= new Stack();
+            s.Push("arya");
+            s.Push('A');
+            s.Push(5);
+            s.Push(true);
+            s.Push(5.11);
+            s.Push("Aru");
+            
+            foreach (object item in s)
+            {
+                Console.WriteLine(item);
+            }
+            s.Pop();
+            Console.WriteLine(".........");
+            foreach (object item in s)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+
+    }
+}
