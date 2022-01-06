@@ -110,3 +110,6 @@ namespace A5
             
             obj.totalgrade();
             obj.subjectgrade();
+        }
+    }
+}
