@@ -1,10 +1,27 @@
-Student.cs
-
-
-
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace A5
+namespace Aswathi
+{
+    partial class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            var obj = new Student();
+            obj.studentdata();
+
+            obj.totalgrade();
+            obj.subjectgrade(obj);
+        }
+    }
+}
+
+namespace Aswathi
 {
     partial class Program
     {
@@ -12,12 +29,12 @@ namespace A5
         {
             public string name;
             public int age;
-            public double  phy,chem,eng, math, his, obtd_marks, total_marks = 500, percentage;
+            public double phy, chem, eng, math, his, obtd_marks, total_marks = 500, percentage;
             public double n;
-           
+
             public Student()
             {
-                
+
 
                 name = "ANU";
                 age = 23;
@@ -26,8 +43,8 @@ namespace A5
                 math = 80;
                 his = 50;
                 chem = 76;
-                
-                
+
+
 
             }
 
@@ -36,12 +53,12 @@ namespace A5
             public void studentdata()
             {
                 obtd_marks = phy + eng + math + his;
-                Console.WriteLine("Name of the student:"+name);
-                Console.WriteLine("Age of the student is"+age);
+                Console.WriteLine("Name of the student:" + name);
+                Console.WriteLine("Age of the student is" + age);
                 Console.WriteLine("Total mark obtained=" + obtd_marks);
 
             }
-            
+
 
             public void totalgrade()
             {
@@ -60,56 +77,37 @@ namespace A5
                 }
 
                 percentage = (obtd_marks / total_marks) * 100;
-                Console.WriteLine("percentage is"+percentage);
+                Console.WriteLine("percentage is" + percentage);
             }
             public void grade(double n)
             {
 
                 if (n >= 80 && n <= 100)
                 {
-                    Console.WriteLine("grade is A");
+                    Console.WriteLine("A Grade");
                 }
                 else if (n >= 60 && n < 80)
                 {
-                    Console.WriteLine("grade is B");
+                    Console.WriteLine("B Grade");
                 }
                 else
                 {
-                    Console.WriteLine("grade is C");
+                    Console.WriteLine("C Grade");
                 }
             }
             public void subjectgrade(Student obj)
             {
-                Console.WriteLine("Grade in Physics");
+                Console.WriteLine("Physics");
                 grade(obj.phy);
-                Console.WriteLine("Grade in chemistry");
+                Console.WriteLine("Chemistry");
                 grade(obj.chem);
+                Console.WriteLine("English");
+                grade(obj.eng);
+                Console.WriteLine("Maths");
+                grade(obj.math);
+                Console.WriteLine("History");
+                grade(obj.his);
             }
-        }
-    }
-}
-
-
-program.cs
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace A5
-{
-    partial class Program
-    {
-
-        static void Main(string[] args)
-        {
-            
-            var obj = new Student();
-            obj.studentdata();
-            
-            obj.totalgrade();
-            obj.subjectgrade();
         }
     }
 }
